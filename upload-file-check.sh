@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #ディレクトリの数を確認
 count=`ssh rionerelaypoint "cd ~/share; ls -1 | wc -l"`
@@ -19,10 +19,11 @@ do
     if [ $math ] ; then
       echo "ディレクトリ"
       #ディレクトリを送る
-      #scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem -r ec2-user@13.231.55.13 ~/share/${name} ${dlname}
+      scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem ec2-user@13.231.55.13:~/share/${VAR1}/${name} ${dlname}
     elif [ !$math ] ; then
       echo "ファイル"
-      #scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem -f ec2-user@13.231.55.13 ~/share/${name} ${dlname}
+      scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem ec2-user@13.231.55.13:~/share/${VAR1}/${name} ${dlname}
+      echo "成功"
     fi
   done
 done
