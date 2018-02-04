@@ -21,12 +21,14 @@ do
    # if [ $math = "0" ] ; then
     #  echo "ディレクトリ"
       #ディレクトリを送る
+
       scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem -r ec2-user@52.192.59.159:~/share/${VAR1}/${name} ${dlname}
    # elif [ $math = "1" ] ; then
      # echo "ファイル"
      # scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem ec2-user@13.231.55.13:~/share/${VAR1}/${name} ${dlname}
      # echo "成功"
    # fi
+
   done
 done
 ssh rionerelaypoint "cd ~/share; rm -r *"
