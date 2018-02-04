@@ -19,10 +19,10 @@ do
     if [ $math ] ; then
       echo "ディレクトリ"
       #ディレクトリを送る
-      scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem ec2-user@13.231.55.13:~/share/${VAR1}/${name} ${dlname}
+      scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem ec2-user@52.192.59.159:~/share/${VAR1}/${name} ${dlname}
     elif [ !$math ] ; then
       echo "ファイル"
-      scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem ec2-user@13.231.55.13:~/share/${VAR1}/${name} ${dlname}
+      scp -i ~/.ssh/ri-oneFileServerRelayPoint.pem ec2-user@52.192.59.159:~/share/${VAR1}/${name} ${dlname}
       echo "成功"
     fi
   done
